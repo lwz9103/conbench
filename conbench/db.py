@@ -30,7 +30,7 @@ def configure_engine(url):
 
 
 # compute this only once.
-@functools.cache
+# @functools.cache
 def get_tables_in_cleanup_order():
     # We need to remove rows from the many-to-many tables first to avoid
     # foreign key violations.
