@@ -31,7 +31,7 @@ class CantFindAncestorCommitsError(Exception):
 class Commit(Base, EntityMixin):
     __tablename__ = "commit"
     id = NotNull(s.String(50), primary_key=True, default=generate_uuid)
-    sha = NotNull(s.String(50))
+    sha = NotNull(s.String(1024))
     branch = Nullable(s.String(510))
     fork_point_sha = Nullable(s.String(50))
     parent = Nullable(s.String(50))

@@ -31,9 +31,9 @@ log = logging.getLogger(__name__)
 
 class Run(Base, EntityMixin):
     __tablename__ = "run"
-    id = NotNull(s.String(50), primary_key=True)
-    name = Nullable(s.String(250))
-    reason = Nullable(s.String(250))
+    id = NotNull(s.String(1024), primary_key=True)
+    name = Nullable(s.String(1024))
+    reason = Nullable(s.String(4096))
     timestamp = NotNull(s.DateTime(timezone=False), server_default=s.sql.func.now())
     finished_timestamp = Nullable(s.DateTime(timezone=False))
     info = Nullable(postgresql.JSONB)
